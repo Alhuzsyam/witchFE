@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="mt-5">
+        <div class="card">
+            <div class="card-header">
+              Witched Victim (calc)
+            </div>
+            <div class="m-3">
+                <div *ngIf="showAlert" class="alert alert-warning" role="alert">
+                    Input fields are required.
+                </div>
+                <div *ngIf="showAlerts" class="alert alert-danger" role="alert">
+                    Tahun kelahiran korban kurang dari nol
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <div class="form-group">
+                          <label for="ageAtDeathA">Age at DeathA</label>
+                          <input type="number" class="form-control" id="ageAtDeathA" [(ngModel)]="ageAtDeathA">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <div class="form-group">
+                          <label for="yearOfDeathA">Year Of DeathA</label>
+                          <input type="number" class="form-control" id="yearOfDeathA" [(ngModel)]="yearOfDeathA">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <div class="form-group">
+                          <label for="ageAtDeathB">Age at DeathB</label>
+                          <input type="number" class="form-control" id="ageAtDeathB" [(ngModel)]="ageAtDeathB">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <div class="form-group">
+                          <label for="yearOfDeathB">Year Of DeathB</label>
+                          <input type="number" class="form-control" id="yearOfDeathB" [(ngModel)]="yearOfDeathB">
+                        </div>
+                    </div>
+                </div>
+                <div class="container" *ngIf="showAnswer">
+                    <div class="m-2 p-4" style="background: #20c997;height: 14rem;">
+                        <b>Asnwer 🗡️</b> <br> 
+                        Victim Average is : <b>{{averageValue}}</b> 
+                        <br>🧙🏻‍♀️ Rata - rata diambil berdasarkan <br>
+                        Pada Tahun ke : <b>{{tahunke}}</b> <br> 
+                        Ditemukan Korban Sebanyak  <b>{{korban}}</b> Orang <br>
+                        Pada Tahun ke : <b>{{tahunke_}}</b> <br> 
+                        Ditemukan Korban Sebanyak  <b>{{korban_}}</b> Orang <br>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-md-12 p-3 m-2">
+                    <div class="btn btn-primary mt-3" (click)="calc()">Calculate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
